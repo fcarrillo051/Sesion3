@@ -5,7 +5,7 @@ public class Cuenta {
 	private double saldo;
 	
 	public void ingresar(double i) {
-		
+		this.setSaldo(this.getSaldo() + i);
 	}
 
 	public Cuenta(long saldo) {
@@ -14,7 +14,7 @@ public class Cuenta {
 	}
 
 	public double getSaldo() {
-		return 3000;
+		return saldo;
 	}
 
 	public void setSaldo(double saldo) {
