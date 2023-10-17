@@ -12,11 +12,11 @@ import pkg.Cuenta;
 
 class CuentaTest {
 
-	Cuenta cuenta;
+	static Cuenta cuenta;
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		cuenta = new Cuenta();
+		cuenta = new Cuenta((long)0);
 	}
 
 	@AfterAll
