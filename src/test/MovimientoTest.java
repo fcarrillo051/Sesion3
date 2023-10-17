@@ -36,16 +36,17 @@ class MovimientoTest {
 
 	@Test
 	void Test0014() {
-		cuenta12345.realizarMovimiento(new Movimiento(200, Movimiento.Signo.REINTEGRO));
-        cuenta67890.realizarMovimiento(new Movimiento(350, Movimiento.Signo.REINTEGRO));
-        cuenta12345.realizarMovimiento(new Movimiento(100, Movimiento.Signo.INGRESO));
-        cuenta67890.realizarMovimiento(new Movimiento(200, Movimiento.Signo.REINTEGRO));
-        cuenta67890.realizarMovimiento(new Movimiento(150, Movimiento.Signo.REINTEGRO));
-        cuenta67890.realizarMovimiento(new Movimiento(50, Movimiento.Signo.INGRESO));
-        cuenta67890.realizarMovimiento(new Movimiento(100, Movimiento.Signo.REINTEGRO));
+		cuenta12345.realizarMovimiento(new Movimiento((double)200, Movimiento.Signo.REINTEGRO));
+        cuenta67890.realizarMovimiento(new Movimiento((double) 350, Movimiento.Signo.REINTEGRO));
+        cuenta12345.realizarMovimiento(new Movimiento((double) 100, Movimiento.Signo.INGRESO));
+        cuenta67890.realizarMovimiento(new Movimiento((double) 200, Movimiento.Signo.REINTEGRO));
+        cuenta67890.realizarMovimiento(new Movimiento((double) 150, Movimiento.Signo.REINTEGRO));
+        cuenta12345.realizarMovimiento(new Movimiento((double)200, Movimiento.Signo.REINTEGRO));
+        cuenta67890.realizarMovimiento(new Movimiento((double) 50, Movimiento.Signo.INGRESO));
+        cuenta67890.realizarMovimiento(new Movimiento((double) 100, Movimiento.Signo.REINTEGRO));
 
-        assertEquals(-250, cuenta12345.getSaldo(), 0.01);
-        assertEquals(-450, cuenta67890.getSaldo(), 0.01);
+        assertEquals(-250, cuenta12345.getSaldo());
+        assertEquals(-750, cuenta67890.getSaldo());
 	}
 
 }
