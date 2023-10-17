@@ -39,6 +39,7 @@ class CuentaTest {
 
 	@Test
 	void testRetirar() {
-		fail("Not yet implemented");
+		cuenta.retirar(3000);
+		assertEquals(-3000, cuenta.getSaldo());
 	}
 }
