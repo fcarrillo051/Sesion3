@@ -46,7 +46,7 @@ class MovimientoTest {
         cuenta67890.realizarMovimiento(new Movimiento((double) 100, Movimiento.Signo.REINTEGRO));
 
         assertEquals(-250, cuenta12345.getSaldo());
-        assertEquals(-750, cuenta67890.getSaldo());
+        assertEquals(-450, cuenta67890.getSaldo());
 	}
 
 }

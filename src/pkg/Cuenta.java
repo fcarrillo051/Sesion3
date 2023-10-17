@@ -36,14 +36,17 @@ public class Cuenta {
 		
 	}
 
-	 public void realizarMovimiento(Movimiento movimiento) {
-		// Simplemente actualizamos el saldo sin considerar el límite de descubierto.
-	        if (movimiento.getSigno() == Movimiento.Signo.INGRESO) {
-	            this.saldo += movimiento.getImporte();
-	        } else if (movimiento.getSigno() == Movimiento.Signo.REINTEGRO) {
-	            this.saldo -= movimiento.getImporte();
-	        }
-	        movimientos.add(movimiento);
-	    }
+	public void realizarMovimiento(Movimiento movimiento) {
+        if (movimiento.getSigno() == Movimiento.Signo.INGRESO) {
+            saldo += movimiento.getImporte();
+        } else if (movimiento.getSigno() == Movimiento.Signo.REINTEGRO) {
+            if (saldo - movimiento.getImporte() >= -500) {
+                saldo -= movimiento.getImporte();
+            } else {
+                System.out.println("Saldo insuficiente para realizar el retiro.");
+            }
+        }
+        movimientos.add(movimiento);
+    }
 	
 }
