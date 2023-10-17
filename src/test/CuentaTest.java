@@ -16,7 +16,7 @@ class CuentaTest {
 	
 	@BeforeAll
 	static void setUpBeforeClass() throws Exception {
-		cuenta = new Cuenta((long)0);
+		cuenta = new Cuenta(0, null, null);
 	}
 
 	@AfterAll
